@@ -148,7 +148,7 @@ namespace CobaTugasCRUDPostgreSQL
 
         private void textboxCari_TextChanged(object sender, EventArgs e)
         {
-            DataTable.DataSource = koneksi.showData("SELECT * FROM jadwal WHERE nama LIKE '%" + textboxCari.Text + "%' OR nim LIKE '%" + textboxCari.Text + "%'");
+            DataTable.DataSource = koneksi.showData("SELECT * FROM jadwal WHERE LOWER(nama) LIKE '%" + textboxCari.Text + "%' OR nim LIKE '%" + textboxCari.Text + "%'");
         }
     }
 }
